@@ -16,11 +16,17 @@ resource "aws_instance" "example" {
   instance_type = var.instance_type
   availability_zone = var.availabiliy_zone
   key_name = var.key-pair-name
+  subnet_id = var.subnet
   root_block_device {
     volume_size = 20
     volume_type = "gp2"
     delete_on_termination = true
     tags = {}
+  }
+  vpc_security_group_ids = ["sg-00000000"]
+
+  tags = {
+    common_tags = "tag1"
   }
   user_data = <<EOF
   #!/bin/bash

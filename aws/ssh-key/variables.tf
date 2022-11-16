@@ -1,8 +1,3 @@
-variable "instance_type" {
-  type = string
-  default = "t3.small"
-}
-
 variable "key-pair-name" {
   type = string
   default = "my-key-pair"
@@ -19,16 +14,6 @@ variable "dynamodb_table_name" {
 }
 
 variable "region" {
-  type = string
   default = "us-west-2"
-}
-
-variable "availabiliy_zone" {
   type = string
-  default = "us-west-2b"
-}
-
-variable "subnet" {
-  type = string
-  default = "subnet-01"
 }
