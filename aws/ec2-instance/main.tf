@@ -21,7 +21,6 @@ resource "aws_instance" "example" {
     volume_size = 20
     volume_type = "gp2"
     delete_on_termination = true
-    tags = {}
   }
   vpc_security_group_ids = ["sg-00000000"]
 
@@ -33,6 +32,5 @@ resource "aws_instance" "example" {
   sudo apt update
   sudo apt install docker.io
   sudo usermod -a -G docker ubuntu
-  sudo usermod -a -G docker gitlab-runner
   EOF
 }
